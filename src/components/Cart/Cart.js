@@ -5,8 +5,8 @@ const Cart = ({ cart }) => {
     let quantity = 0;
     let shipping = 0;
     for (const id of cart) {
-        quantity = quantity + 1;
-        subTotal = subTotal + id.price;
+        quantity = quantity + id.quantity;
+        subTotal = subTotal + id.price * id.quantity;
         shipping = 50;
     }
     const tax = subTotal * 0.1;

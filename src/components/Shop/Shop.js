@@ -12,15 +12,25 @@ const Shop = () => {
     }, []);
     const [carts, setCarts] = useState([]);
     const addToCartEvent = (product) => {
-        const newCart = [...carts, product];
+        const stored = carts.find(cart => cart.id === product.id);
+        let newCart = [];
+        if (!stored) {
+            product.quantity = 1;
+            newCart = [...carts, product];
+            // setCarts(newCart);
+        }
+        else {
+            const exist = carts.filter(cart => cart.id !== product.id);
+            stored.quantity = stored.quantity + 1;
+            newCart = [...exist, product];
+        }
         setCarts(newCart);
         addToDb(product.id);
     }
+    console.log(carts);
     useEffect(() => {
         const exist = getProduct();
-        console.log(exist);
         let newCart = [];
-
         for (const id in exist) {
             const stored = products.find(product => product.id === id);
             if (stored) {
@@ -30,6 +40,7 @@ const Shop = () => {
         }
         setCarts(newCart);
     }, [products]);
+
     return (
         <div className='shop-container'>
             <div className="product-container">
