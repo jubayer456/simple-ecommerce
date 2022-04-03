@@ -1,0 +1,36 @@
+.productdetails img {
+    width: 91px;
+    height: 91px;
+}
+
+.productdetails {
+    display: flex;
+    border: 1px solid lightblue;
+    padding: 7px;
+    width: 570px;
+    margin: 10px auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inner-details1 {
+    display: flex;
+}
+
+.inner-details p {
+    margin: 5px 0;
+}
+
+.inner-details {
+    padding-left: 15px;
+}
+
+.delete-icon {
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    margin-right: 20px;
+    color: rgba(235, 87, 87, 1);
+    background: rgba(235, 87, 87, 0.3);
+    cursor: pointer;
+}

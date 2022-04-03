@@ -1,23 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { addToDb, getProduct } from '../../utilities/fakeDb';
+import { addToDb, deleteFullCart, getProduct } from '../../utilities/fakeDb';
+import useCarts from '../../utilities/useCarts';
+import useProducts from '../../utilities/useProducts';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css'
 const Shop = () => {
-    const [products, setProducts] = useState([]);
-    useEffect(() => {
-        fetch('products.json')
-            .then(res => res.json())
-            .then(data => setProducts(data));
-    }, []);
-    const [carts, setCarts] = useState([]);
+    const [products, setProducts] = useProducts();
+    const [carts, setCarts] = useCarts(products);
     const addToCartEvent = (product) => {
         const stored = carts.find(cart => cart.id === product.id);
         let newCart = [];
         if (!stored) {
             product.quantity = 1;
             newCart = [...carts, product];
-            // setCarts(newCart);
         }
         else {
             const exist = carts.filter(cart => cart.id !== product.id);
@@ -27,20 +23,10 @@ const Shop = () => {
         setCarts(newCart);
         addToDb(product.id);
     }
-    console.log(carts);
-    useEffect(() => {
-        const exist = getProduct();
-        let newCart = [];
-        for (const id in exist) {
-            const stored = products.find(product => product.id === id);
-            if (stored) {
-                stored.quantity = exist[id];
-                newCart.push(stored);
-            }
-        }
-        setCarts(newCart);
-    }, [products]);
-
+    const clearBtn = () => {
+        setCarts([]);
+        deleteFullCart();
+    }
     return (
         <div className='shop-container'>
             <div className="product-container">
@@ -53,10 +39,14 @@ const Shop = () => {
                 }
             </div>
             <div className="cart-container">
-                <Cart cart={carts}></Cart>
+                <Cart cart={carts}
+                    clearBtn={clearBtn}
+                >
+                    <button className='cart-btn-2'>Order Review</button>
+                </Cart>
             </div>
 
-        </div>
+        </div >
     );
 };
 

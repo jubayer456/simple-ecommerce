@@ -1,6 +1,6 @@
 import React from 'react';
 import './Cart.css'
-const Cart = ({ cart }) => {
+const Cart = ({ cart, clearBtn }) => {
     let subTotal = 0;
     let quantity = 0;
     let shipping = 0;
@@ -9,7 +9,7 @@ const Cart = ({ cart }) => {
         subTotal = subTotal + id.price * id.quantity;
         shipping = 50;
     }
-    const tax = subTotal * 0.1;
+    const tax = parseFloat((subTotal * 0.1).toFixed(2));
     const total = subTotal + shipping + tax;
     return (
         <div className='cart'>
@@ -19,6 +19,7 @@ const Cart = ({ cart }) => {
             <p>Shipping: ${shipping}</p>
             <p>Tax: ${tax}</p>
             <h3>Total: ${total}</h3>
+            <button onClick={clearBtn} className='cart-btn-1'>Clear Cart</button>
         </div>
     );
 };
