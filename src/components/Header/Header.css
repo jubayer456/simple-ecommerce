@@ -1,0 +1,17 @@
+nav {
+    padding: 5px 140px;
+    background-color: rgba(28, 43, 53, 1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    margin-right: 30px;
+}
+
+nav a:hover {
+    color: aqua;
+}
