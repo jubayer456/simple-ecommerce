@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { addToDb, deleteFullCart, removeFromDb } from '../../utilities/fakeDb';
 import useCarts from '../../utilities/useCarts';
 import useProducts from '../../utilities/useProducts';
@@ -34,6 +35,9 @@ const Order = () => {
                 <Cart cart={carts}
                     clearBtn={clearBtn}
                 >
+                    <Link to="/manageInventory">
+                        <button className='cart-btn-2'>Proceed to Checkout</button>
+                    </Link>
                 </Cart>
             </div>
 
