@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 const ProductDetails = (props) => {
     const { img, name, price, quantity } = props.product;
-
+    const { deleteItem } = props;
     return (
         <div className='productdetails'>
             <div className='inner-details1'>
@@ -15,7 +15,7 @@ const ProductDetails = (props) => {
                     <p>Quantity: {quantity}</p>
                 </div>
             </div>
-            <button className='delete-icon'><FontAwesomeIcon icon={faTrash} /></button>
+            <button onClick={() => deleteItem(props.product)} className='delete-icon'><FontAwesomeIcon icon={faTrash} /></button>
 
 
         </div>
