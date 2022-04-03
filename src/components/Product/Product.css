@@ -1,9 +1,38 @@
 .product img {
-    width: 286px;
-    height: 286px;
+    width: 288px;
+    height: 288px;
+    margin: 7px;
+    border-radius: 8px;
 }
 
 .product {
-    width: 310px;
+    width: 305px;
     height: 510px;
+    border: 1px solid lightgrey;
+    position: relative;
+    border-radius: 10px;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product-info p {
+    margin: 5px 0;
+}
+
+.addToCart-btn {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 13px;
+    border: none;
+    background-color: rgba(255, 224, 179, 1);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.addToCart-btn:hover {
+    background-color: rgb(65, 101, 125);
+    color: aqua;
 }
