@@ -9,6 +9,7 @@
     padding: 7px;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .cart-btn-1 {

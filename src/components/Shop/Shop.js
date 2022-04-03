@@ -5,7 +5,9 @@ import useCarts from '../../utilities/useCarts';
 import useProducts from '../../utilities/useProducts';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
-import './Shop.css'
+import './Shop.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 const Shop = () => {
     const [products, setProducts] = useProducts();
     const [carts, setCarts] = useCarts(products);
@@ -44,7 +46,7 @@ const Shop = () => {
                     clearBtn={clearBtn}
                 >
                     <Link to="/orderReview">
-                        <button className='cart-btn-2'>Order Review</button>
+                        <button className='cart-btn-2'>Order Review <FontAwesomeIcon icon={faArrowRight} /></button>
                     </Link>
                 </Cart>
             </div>
