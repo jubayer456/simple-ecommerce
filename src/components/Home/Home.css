@@ -1,14 +1,5 @@
-.home {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 70px 130px;
-    line-height: 12px;
-    align-items: center;
-}
-
 .offer {
-    color:
-        rgba(255, 153, 0, 1);
+    color: rgba(255, 153, 0, 1);
 }
 
 .shop-btn {
@@ -21,27 +12,14 @@
     margin-top: 30px;
 }
 
+/* 
 .home h1 {
     font-weight: 700;
     font-size: 45px;
-}
+    text-align: start;
+} */
 
-.home p {
+/* .home p {
     font-size: 20px;
-}
-
-.home h5 {
-    margin-bottom: 50px;
-}
-
-.home img {
-    width: 350px;
-    height: 430px;
-    margin-left: 90px;
-}
-
-@media screen and (max-width:678px) {
-    .home {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
+    margin: 5px 0;
+} */

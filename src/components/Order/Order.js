@@ -35,25 +35,29 @@ const Order = () => {
     }
 
     return (
-        <div className='shop-container'>
-            <div className="order-review-container">
-                {
-                    carts.map(product => <ProductDetails
-                        key={product.id}
-                        product={product}
-                        deleteItem={deleteItem}
-                    ></ProductDetails>)
-                }
-                {command}
+        <div className='row m-3'>
+            <div className="col col-12 col-lg-8">
+                <div className=" order-review-container">
+                    {
+                        carts.map(product => <ProductDetails
+                            key={product.id}
+                            product={product}
+                            deleteItem={deleteItem}
+                        ></ProductDetails>)
+                    }
+                    {command}
+                </div>
             </div>
-            <div className="cart-container">
-                <Cart cart={carts}
-                    clearBtn={clearBtn}
-                >
-                    <Link to="/manageInventory">
-                        <button className='cart-btn-2'>Proceed to Checkout  <FontAwesomeIcon icon={faCalculator} /></button>
-                    </Link>
-                </Cart>
+            <div className="col col-12 col-lg-4">
+                <div className="cart-container">
+                    <Cart cart={carts}
+                        clearBtn={clearBtn}
+                    >
+                        <Link to="/manageInventory">
+                            <button className='cart-btn-2'>Proceed to Checkout  <FontAwesomeIcon icon={faCalculator} /></button>
+                        </Link>
+                    </Cart>
+                </div>
             </div>
 
         </div >

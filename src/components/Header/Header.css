@@ -1,9 +1,5 @@
-nav {
-    padding: 5px 140px;
+.navClass {
     background-color: rgba(28, 43, 53, 1);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 nav a {

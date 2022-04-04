@@ -16,8 +16,6 @@ const ProductDetails = (props) => {
                 </div>
             </div>
             <button onClick={() => deleteItem(props.product)} className='delete-icon'><FontAwesomeIcon icon={faTrash} /></button>
-
-
         </div>
     );
 };

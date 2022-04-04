@@ -31,24 +31,30 @@ const Shop = () => {
         deleteFullCart();
     }
     return (
-        <div className='shop-container'>
-            <div className="product-container">
-                {
-                    products.map(product => <Product
-                        key={product.id}
-                        product={product}
-                        addToCartEvent={addToCartEvent}
-                    ></Product>)
-                }
-            </div>
-            <div className="cart-container">
-                <Cart cart={carts}
-                    clearBtn={clearBtn}
-                >
-                    <Link to="/orderReview">
-                        <button className='cart-btn-2'>Order Review <FontAwesomeIcon icon={faArrowRight} /></button>
-                    </Link>
-                </Cart>
+        <div className='container'>
+            <div className="row my-5">
+                <div className="col col-lg-9 col-12 ">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3  g-4">
+                        {
+                            products.map(product => <Product
+                                key={product.id}
+                                product={product}
+                                addToCartEvent={addToCartEvent}
+                            ></Product>)
+                        }
+                    </div>
+                </div>
+                <div className="col col-lg-3 col-12 ">
+                    <div className="cart-container">
+                        <Cart cart={carts}
+                            clearBtn={clearBtn}
+                        >
+                            <Link to="/orderReview">
+                                <button className='cart-btn-2'>Order Review <FontAwesomeIcon icon={faArrowRight} /></button>
+                            </Link>
+                        </Cart>
+                    </div>
+                </div>
             </div>
 
         </div >
