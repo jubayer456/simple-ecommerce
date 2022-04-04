@@ -1,6 +1,6 @@
 # Simple Ecommerce
 
-This project was bootstrapped with [Create React App](https://glittery-pithivier-6f9eb0.netlify.app/orderReview).
+Livesite Link of [ema-john](https://ema-john-1172a.netlify.app).
 
 
 
